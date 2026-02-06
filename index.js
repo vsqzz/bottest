@@ -13,8 +13,15 @@ client.on('ready', () => {
 });
 
 client.on('messageCreate', (message) => {
+  // Ignore bot messages
+  if (message.author.bot) return;
+
   if (message.content === '!ping') {
     message.reply('Pong!');
+  }
+
+  if (message.content === '!hello') {
+    message.reply(`Hello, ${message.author.username}! 👋`);
   }
 });
 
